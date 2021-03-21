@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New person</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/patient}" th:object="${patient}">
+    <br/>
+    <label for="Name">Enter Name: </label>
+    <input type="text" th:field="*{patientName}" id="Name"/>
+    <br/>
+    <label for="phoneNumber">Enter Phone Number: </label>
+    <input type="text" th:field="*{patientPhoneNumber}" id="phoneNumber"/>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>

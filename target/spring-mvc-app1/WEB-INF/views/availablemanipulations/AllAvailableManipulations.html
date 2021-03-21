@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<table>
+    <tr th:each="manip : ${avmanipulations}">
+        <td th:text="${manip.toString()}">user</td>>
+    </tr>
+    <tr>
+        <a href="/spring_jdbc_template_war/availablemanipulations/new">Create new available manipulation</a>
+    </tr>
+</table>
+
+</body>
+</html>

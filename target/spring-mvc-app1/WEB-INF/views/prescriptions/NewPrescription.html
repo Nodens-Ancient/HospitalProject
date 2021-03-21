@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New person</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/prescriptions}" th:object="${prescription}">
+    <br/>
+    <label for="idManipulation">Manipulation id: </label>
+    <input type="text" th:field="*{idManipulation}" id="idManipulation"/>
+    <br/>
+    <label for="ref">Personal instructed: </label>
+    <input type="text" th:field="*{idPersonalRef}" id="ref"/>
+    <br/>
+    <label for="idDiagnose">Enter Phone Number: </label>
+    <input type="text" th:field="*{idDiagnose}" id="idDiagnose"/>
+    <br/>
+    <label for="idExec">Enter Phone Number: </label>
+    <input type="text" th:field="*{idPersonalExec}" id="idExec"/>
+    <br/>
+    <label for="idRes">Enter Phone Number: </label>
+    <input type="text" th:field="*{idResort}" id="idRes"/>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>

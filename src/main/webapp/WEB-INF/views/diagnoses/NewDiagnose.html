@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New person</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/diagnoses}" th:object="${diagnose}">
+    <br/>
+    <label for="resortId">Resort id: </label>
+    <input type="text" th:field="*{idResort}" id="resortId"/>
+    <br/>
+    <label for="symptoms">Symptoms: </label>
+    <input type="text" th:field="*{symptoms}" id="symptoms"/>
+    <br/>
+    <label for="initialDiagnose">Initial diagnose: </label>
+    <input type="text" th:field="*{diagnoseInitial}" id="initialDiagnose"/>
+    <br/>
+    <label for="finalDiagnose">Final diagnose: </label>
+    <input type="text" th:field="*{diagnoseFinal}" id="finalDiagnose"/>
+    <br/>
+    <label for="currentDiagnose">Current diagnose: </label>
+    <input type="text" th:field="*{diagnoseCurrent}" id="currentDiagnose"/>
+    <br/>
+
+    <input type="submit" value="Create"/>
+</form>
+
+</body>

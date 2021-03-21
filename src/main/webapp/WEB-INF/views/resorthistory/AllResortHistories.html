@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<table>
+    <tr th:each="resor : ${resorthistory}">
+        <td th:text="${resor}">user</td>>
+    </tr>
+    <tr>
+        <td href="/spring_jdbc_template_war/resorthistory/NewResortHistory"> Create new resort history</td>
+    </tr>
+</table>
+
+</body>
+</html>

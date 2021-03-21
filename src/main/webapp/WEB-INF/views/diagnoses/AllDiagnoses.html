@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<table>
+    <!--/*@thymesVar id="diagnoses" type="java.util.List<Hospital.models.Diagnoses>"*/-->
+    <tr th:each="diag : ${diagnose}">
+        <td th:text="${diag.toString()}">
+    </tr>
+    <tr>
+        <a href="/spring_jdbc_template_war/diagnoses/new">Create new diagnose</a>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New person</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/resorthistory}" th:object="${resorthistory}">
+    <br/>
+    <label for="patientId">Patient id: </label>
+    <input type="text" th:field="*{idPatient}" id="patientId"/>
+    <br/>
+    <label for="dateResort">Enter Phone Number: </label>
+    <input type="text" th:field="*{dateResort}" id="dateResort"/>
+    <br/>
+    <label for="dateDischarge">Enter Phone Number: </label>
+    <input type="text" th:field="*{dateDischarge}" id="dateDischarge"/>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>

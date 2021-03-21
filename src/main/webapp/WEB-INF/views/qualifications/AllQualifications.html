@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<table>
+    <!--/*@thymesVar id="qualifications" type="java.util.List<Hospital.models.Qualification>"*/-->
+    <tr th:each="qual : ${qualifications}">
+        <td th:text="${qual.toString()}">user</td>
+    </tr>
+    <tr>
+        <a href="/spring_jdbc_template_war/qualification/new">Create new qualification</a>
+    </tr>
+</table>
+
+</body>
+</html>
