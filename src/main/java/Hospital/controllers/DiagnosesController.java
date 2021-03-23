@@ -1,7 +1,7 @@
 package Hospital.controllers;
 
 import Hospital.dao.DiagnosesDAO;
-import Hospital.models.Diagnoses;
+import Hospital.models.tablemodels.Diagnose;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,8 +22,8 @@ public class DiagnosesController {
         this.diagnosesDAO = diagnosesDAO;
     }
     @GetMapping
-    public String index(Model model) {
-        model.addAttribute("diagnose", diagnosesDAO.index());
+    public String getAllTable(Model model) {
+        model.addAttribute("diagnose", diagnosesDAO.getAllTable());
         return INDEX;
     }
 
@@ -34,16 +34,16 @@ public class DiagnosesController {
     }
 
     @GetMapping("/new")
-    public String NewDiagnose(@ModelAttribute("diagnose") Diagnoses diagnoses) {
+    public String NewDiagnose(@ModelAttribute("diagnose") Diagnose diagnose) {
         return "diagnoses/NewDiagnose";
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("diagnose") @Valid Diagnoses diagnoses, BindingResult bindingResult) {
+    public String create(@ModelAttribute("diagnose") @Valid Diagnose diagnose, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "patients/NewDiagnose";
 
-        diagnosesDAO.save(diagnoses);
+        diagnosesDAO.save(diagnose);
         return "redirect:/diagnoses";
     }
 }

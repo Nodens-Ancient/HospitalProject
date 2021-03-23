@@ -6,15 +6,26 @@
 </head>
 <body>
 
-<table>
-    <!--/*@thymesVar id="patients" type="java.util.List<Hospital.models.Patients>"*/-->
+<table border="1" width="100%" cellpadding="5">
+    <!--/*@thymesVar id="patient" type="java.util.List<Hospital.models.tablemodels.Patient>"*/-->
+    <tr>
+        <th>Patient ID</th>
+        <th>PatientName</th>
+        <th>PhoneNumber</th>
+    </tr>
     <tr th:each="pat : ${patients}">
-        <td th:text="${pat.toString()}"></td>
+        <td th:text="${pat.id}">text</td>
+        <td >
+            <a th:text="${pat.patientName}"
+               th:href="@{/medicalHistory/{id}(id=${pat.getId()})}">
+                text
+            </a>
+        </td>
+        <td th:text="${pat.patientPhoneNumber}">text</td>
     </tr>
     <tr>
         <a href="/spring_jdbc_template_war/patients/new">Create new patient</a>
     </tr>
-    <tr>
 </table>
 
 </body>

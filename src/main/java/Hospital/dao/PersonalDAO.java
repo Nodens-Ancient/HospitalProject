@@ -1,6 +1,6 @@
 package Hospital.dao;
 
-import Hospital.models.Personal;
+import Hospital.models.tablemodels.Personal;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -17,8 +17,8 @@ public class PersonalDAO extends HospitalDAO {
         super(jdbcTemplate);
     }
 
-    public List<Personal> index(){
-        return super.index(TABLE_NAME, Personal.class);
+    public List<Personal> getAllTable(){
+        return super.getAllTable(TABLE_NAME, Personal.class);
     }
 
     public Personal show(int id){

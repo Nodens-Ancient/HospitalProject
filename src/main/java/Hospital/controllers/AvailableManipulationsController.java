@@ -1,7 +1,7 @@
 package Hospital.controllers;
 
 import Hospital.dao.AvailableManipulationsDAO;
-import Hospital.models.AvailableManipulations;
+import Hospital.models.tablemodels.AvailableManipulation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,8 +22,8 @@ public class AvailableManipulationsController {
         this.availableManipulationsDAO = availableManipulationsDAO;
     }
     @GetMapping
-    public String index(Model model){
-        model.addAttribute("avmanipulations", availableManipulationsDAO.index());
+    public String getAllTable(Model model){
+        model.addAttribute("avmanipulations", availableManipulationsDAO.getAllTable());
         return ALL_INFO;
     }
 
@@ -33,16 +33,16 @@ public class AvailableManipulationsController {
         return SHOW;
     }
     @GetMapping("/new")
-    public String newAvailableManipulation(@ModelAttribute("avmanipulation") AvailableManipulations availableManipulations) {
+    public String newAvailableManipulation(@ModelAttribute("avmanipulation") AvailableManipulation availableManipulation) {
         return "availablemanipulations/NewAvailableManipulation";
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("diagnose") @Valid AvailableManipulations availableManipulations, BindingResult bindingResult) {
+    public String create(@ModelAttribute("diagnose") @Valid AvailableManipulation availableManipulation, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "availablemanipulations/NewAvailableManipulation";
 
-        availableManipulationsDAO.save(availableManipulations);
+        availableManipulationsDAO.save(availableManipulation);
         return "redirect:/availablemanipulations";
     }
 }

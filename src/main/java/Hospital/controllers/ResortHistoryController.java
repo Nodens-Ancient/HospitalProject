@@ -1,7 +1,7 @@
 package Hospital.controllers;
 
 import Hospital.dao.ResortHistoryDAO;
-import Hospital.models.ResortHistory;
+import Hospital.models.tablemodels.ResortHistory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,8 +22,8 @@ public class ResortHistoryController {
         this.resortHistoryDAO = resortHistoryDAO;
     }
     @GetMapping
-    public String index(Model model) {
-        model.addAttribute("resorthistory", resortHistoryDAO.index());
+    public String getAllTable(Model model) {
+        model.addAttribute("resorthistory", resortHistoryDAO.getAllTable());
         return INDEX;
     }
 

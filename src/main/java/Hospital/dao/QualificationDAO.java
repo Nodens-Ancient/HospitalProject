@@ -1,8 +1,6 @@
 package Hospital.dao;
 
-import Hospital.models.AvailableManipulations;
-import Hospital.models.Patients;
-import Hospital.models.Qualification;
+import Hospital.models.tablemodels.Qualification;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -18,8 +16,8 @@ public class QualificationDAO extends HospitalDAO{
     }
 
 
-    public List<Qualification> index(){
-        return super.index(TABLE_NAME, Qualification.class);
+    public List<Qualification> getAllTable(){
+        return super.getAllTable(TABLE_NAME, Qualification.class);
     }
 
     public Qualification show(int id){

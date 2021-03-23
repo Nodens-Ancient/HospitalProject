@@ -1,7 +1,7 @@
 package Hospital.controllers;
 
 import Hospital.dao.PersonalDAO;
-import Hospital.models.Personal;
+import Hospital.models.tablemodels.Personal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,8 +20,8 @@ public class PersonalController {
         this.personalDAO = personalDAO;
     }
     @GetMapping()
-    public String index(Model model) {
-        model.addAttribute("personal", personalDAO.index());
+    public String getAllTable(Model model) {
+        model.addAttribute("personal", personalDAO.getAllTable());
         return "personal/AllPersonal";
     }
 
@@ -45,37 +45,6 @@ public class PersonalController {
         personalDAO.save(personal);
         return "redirect:/personal";
     }
-
-//    @GetMapping("/new")
-//    public String newPerson(@ModelAttribute("personal") Person person) {
-//        return "personal/new";
-//    }
-//
-//    @PostMapping()
-//    public String create(@ModelAttribute("personal") @Valid Personal personal,
-//                         BindingResult bindingResult) {
-//        if (bindingResult.hasErrors())
-//            return "personal/new";
-//
-//        patientlDAO.save(personal);
-//        return "redirect:/personal";
-//    }
-//
-//    @GetMapping("/{id}/edit")
-//    public String edit(Model model, @PathVariable("id") int id) {
-//        model.addAttribute("personal", patientlDAO.show(id));
-//        return "personal/edit";
-//    }
-//
-//    @PatchMapping("/{id}")
-//    public String update(@ModelAttribute("person") @Valid Personal personal, BindingResult bindingResult,
-//                         @PathVariable("id") int id) {
-//        if (bindingResult.hasErrors())
-//            return "personal/edit";
-//
-//        patientlDAO.update(id, personal);
-//        return "redirect:/personal";
-//    }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {

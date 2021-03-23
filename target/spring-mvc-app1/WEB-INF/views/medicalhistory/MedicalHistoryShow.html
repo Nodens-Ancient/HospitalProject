@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<table border="1" width="100%" cellpadding="5">
+    <tr>
+        <th>Patient</th>
+        <th>Symptoms</th>
+        <th>diagnoseInitial</th>
+        <th>diagnoseCurrent</th>
+        <th>diagnoseFinal</th>
+        <th>manipulations</th>
+        <th>dateResort</th>
+        <th>dateDischarge</th>
+    </tr>
+
+    <tr th:each="med : ${medicalHistory}">
+        <td th:text="${med.patientName}">text</td>
+        <td th:text="${med.symptoms}">text</td>
+        <td th:text="${med.diagnoseInitial}">text</td>
+        <td th:text="${med.diagnoseCurrent}">text</td>
+        <td th:text="${med.diagnoseFinal}">text</td>
+        <td th:text="${med.manipulation}">text</td>
+        <td th:text="${med.dateResort}">text</td>
+        <td th:text="${med.dateDischarge}">text</td>
+    </tr>
+</table>
+
+</body>
+</html>

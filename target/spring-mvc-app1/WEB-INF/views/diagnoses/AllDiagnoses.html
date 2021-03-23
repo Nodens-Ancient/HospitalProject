@@ -6,10 +6,22 @@
 </head>
 <body>
 
-<table>
-    <!--/*@thymesVar id="diagnoses" type="java.util.List<Hospital.models.Diagnoses>"*/-->
+<table border="1" width="100%" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Resort ID</th>
+        <th>Symptoms</th>
+        <th>Initial diagnose</th>
+        <th>Current diagnose</th>
+        <th>Final diagnose</th>
+    </tr>
     <tr th:each="diag : ${diagnose}">
-        <td th:text="${diag.toString()}">
+        <td th:text="${diag.id}">text</td>
+        <td th:text="${diag.idResort}">text</td>
+        <td th:text="${diag.symptoms}">text</td>
+        <td th:text="${diag.diagnoseInitial}">text</td>
+        <td th:text="${diag.diagnoseFinal}">text</td>
+        <td th:text="${diag.diagnoseCurrent}">text</td>
     </tr>
     <tr>
         <a href="/spring_jdbc_template_war/diagnoses/new">Create new diagnose</a>

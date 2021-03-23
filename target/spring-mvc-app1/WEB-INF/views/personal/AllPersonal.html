@@ -5,15 +5,26 @@
     <title>Index</title>
 </head>
 <body>
-<table>
+<table border="1" width="100%" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Personal name</th>
+        <th>Personal phone number</th>
+        <th>Personal qualification id</th>
+    </tr>
+
     <tr th:each="pers : ${personal}">
-        <td th:text="${pers.toString()}">user</td>
+        <td th:text="${pers.id}">text</td>
+        <td th:text="${pers.personalName}">text</td>
+        <td th:text="${pers.personalPhoneNumber}">text</td>
+        <td th:text="${pers.idQualification}">text</td>
     </tr>
 </table>
 <table>
     <tr>
         <a href="/spring_jdbc_template_war/personal/new">Create new personal</a>
     </tr>
+
 </table>
 </body>
 </html>

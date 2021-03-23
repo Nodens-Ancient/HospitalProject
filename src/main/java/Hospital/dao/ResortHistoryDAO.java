@@ -1,8 +1,6 @@
 package Hospital.dao;
 
-import Hospital.models.AvailableManipulations;
-import Hospital.models.Personal;
-import Hospital.models.ResortHistory;
+import Hospital.models.tablemodels.ResortHistory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -18,8 +16,8 @@ public class ResortHistoryDAO extends HospitalDAO{
         super(jdbcTemplate);
     }
 
-    public List<ResortHistory> index(){
-        return super.index(TABLE_NAME, ResortHistory.class);
+    public List<ResortHistory> getAllTable(){
+        return super.getAllTable(TABLE_NAME, ResortHistory.class);
     }
 
     public ResortHistory show(int id){

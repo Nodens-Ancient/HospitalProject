@@ -1,7 +1,7 @@
 package Hospital.controllers;
 
 import Hospital.dao.ManipulationsDAO;
-import Hospital.models.Manipulations;
+import Hospital.models.tablemodels.Manipulation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,8 +22,8 @@ public class ManipulationController {
     }
 
     @GetMapping
-    public String index(Model model) {
-        model.addAttribute("manipulations", manipulationsDAO.index());
+    public String getAllTable(Model model) {
+        model.addAttribute("manipulations", manipulationsDAO.getAllTable());
         return INDEX;
     }
 
@@ -34,16 +34,16 @@ public class ManipulationController {
     }
 
     @GetMapping("/new")
-    public String newManipulation(@ModelAttribute("manipulations") Manipulations manipulations) {
+    public String newManipulation(@ModelAttribute("manipulations") Manipulation manipulation) {
         return "manipulations/NewManipulation";
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("diagnose") @Valid Manipulations manipulations, BindingResult bindingResult) {
+    public String create(@ModelAttribute("manipulations") @Valid Manipulation manipulation, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "manipulations/NewManipulation";
 
-        manipulationsDAO.save(manipulations);
+        manipulationsDAO.save(manipulation);
         return "redirect:/manipulations";
     }
 }

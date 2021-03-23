@@ -6,10 +6,21 @@
 </head>
 <body>
 
-<table>
-    <tr th:each="resor : ${resorthistory}">
-        <td th:text="${resor}">user</td>>
+<table border="1" width="100%" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Patient ID</th>
+        <th>Date resort</th>
+        <th>Date discharge</th>
     </tr>
+    <tr th:each="resor : ${resorthistory}">
+        <td th:text="${resor.id}">text</td>
+        <td th:text="${resor.idPatient}">text</td>
+        <td th:text="${resor.dateResort}">text</td>
+        <td th:text="${resor.dateDischarge}">text</td>
+    </tr>
+</table>
+<table>
     <tr>
         <td href="/spring_jdbc_template_war/resorthistory/NewResortHistory"> Create new resort history</td>
     </tr>

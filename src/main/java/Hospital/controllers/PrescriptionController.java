@@ -1,7 +1,7 @@
 package Hospital.controllers;
 
 import Hospital.dao.PrescriptionsDAO;
-import Hospital.models.Prescription;
+import Hospital.models.tablemodels.Prescription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,8 +23,8 @@ public class PrescriptionController {
     }
 
     @GetMapping()
-    public String index(Model model){
-        model.addAttribute("prescriptions", prescriptionsDAO.index());
+    public String getAllTable(Model model){
+        model.addAttribute("prescriptions", prescriptionsDAO.getAllTable());
         return INDEX;
     }
 

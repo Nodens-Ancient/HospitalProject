@@ -1,7 +1,6 @@
 package Hospital.dao;
 
-import Hospital.models.Patients;
-import Hospital.models.Personal;
+import Hospital.models.tablemodels.Patient;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -19,19 +18,19 @@ public class PatientDAO extends HospitalDAO {
         super(jdbcTemplate);
     }
 
-    public List<Patients> index(){
-        return super.index(TABLE_NAME, Patients.class);
+    public List<Patient> getAllTable(){
+        return super.getAllTable(TABLE_NAME, Patient.class);
     }
 
-    public Patients show(int id){
-        return super.show(TABLE_NAME, id, Patients.class);
+    public Patient show(int id){
+        return super.show(TABLE_NAME, id, Patient.class);
     }
 
     public void delete(int id) {
         super.delete(TABLE_NAME, id);
     }
 
-    public void save(Patients patient) {
+    public void save(Patient patient) {
         super.jdbcTemplate.update("INSERT INTO patients (patientName, patientPhoneNumber)  VALUES( ?, ?)",
                 patient.getPatientName(), patient.getPatientPhoneNumber());
     }

@@ -1,8 +1,6 @@
 package Hospital.dao;
 
-import Hospital.models.AvailableManipulations;
-import Hospital.models.Diagnoses;
-import Hospital.models.Manipulations;
+import Hospital.models.tablemodels.Manipulation;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -19,20 +17,20 @@ public class ManipulationsDAO extends HospitalDAO{
         super(jdbcTemplate);
     }
 
-    public List<Manipulations> index(){
-        return super.index(TABLE_NAME, Manipulations.class);
+    public List<Manipulation> getAllTable(){
+        return super.getAllTable(TABLE_NAME, Manipulation.class);
     }
 
-    public Manipulations show(int id){
-        return super.show(TABLE_NAME, id, Manipulations.class);
+    public Manipulation show(int id){
+        return super.show(TABLE_NAME, id, Manipulation.class);
     }
 
     public void delete(int id) {
         super.delete(TABLE_NAME, id);
     }
 
-    public void save(Manipulations manipulations) {
+    public void save(Manipulation manipulation) {
         super.jdbcTemplate.update("INSERT INTO "+ TABLE_NAME +" (manipulation)  VALUES( ?)",
-                manipulations.getManipulation());
+                manipulation.getManipulation());
     }
 }

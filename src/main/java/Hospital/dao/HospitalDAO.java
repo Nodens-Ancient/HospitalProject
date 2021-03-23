@@ -12,7 +12,7 @@ public abstract class HospitalDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public <T> List<T> index(String tableName, Class<T> tClass){
+    public <T> List<T> getAllTable(String tableName, Class<T> tClass){
         return  jdbcTemplate.query("SELECT * FROM " + tableName, new BeanPropertyRowMapper<>(tClass));
     }
 

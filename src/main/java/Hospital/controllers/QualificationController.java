@@ -1,7 +1,7 @@
 package Hospital.controllers;
 
 import Hospital.dao.QualificationDAO;
-import Hospital.models.Qualification;
+import Hospital.models.tablemodels.Qualification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,8 +23,8 @@ public class QualificationController {
     }
 
     @GetMapping()
-    public String index(Model model){
-        model.addAttribute("qualifications", qualificationDAO.index());
+    public String getAllTable(Model model){
+        model.addAttribute("qualifications", qualificationDAO.getAllTable());
         return INDEX;
     }
 
