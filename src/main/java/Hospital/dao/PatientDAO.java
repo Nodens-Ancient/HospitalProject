@@ -30,10 +30,11 @@ public class PatientDAO extends HospitalDAO {
         super.delete(TABLE_NAME, id);
     }
 
-    public void save(Patient patient) {
-        super.jdbcTemplate.update("INSERT INTO patients (patientName, patientPhoneNumber)  VALUES( ?, ?)",
-                patient.getPatientName(), patient.getPatientPhoneNumber());
+    public void create(Patient patient) {
+        try{
+            super.jdbcTemplate.update("INSERT INTO patients (patientName, patientPhoneNumber)  VALUES(?, ?)",
+                    patient.getPatientName(), patient.getPatientPhoneNumber());
+        }
+        catch (Exception exception){}
     }
-
-
 }

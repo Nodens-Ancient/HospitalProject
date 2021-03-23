@@ -35,7 +35,7 @@ public class PatientController {
         return SHOW;
     }
     @GetMapping("/new")
-    public String newPersonal(@ModelAttribute("patient") Patient patient) {
+    public String newPatient(@ModelAttribute("patient") Patient patient) {
         return "patients/NewPatient";
     }
 
@@ -43,8 +43,12 @@ public class PatientController {
     public String create(@ModelAttribute("patient") @Valid Patient patient, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "patients/NewPatient";
+        try {
+            patientDAO.create(patient);
+        }
+        catch (Exception e){
 
-        patientDAO.save(patient);
+        }
         return "redirect:/patients";
     }
 

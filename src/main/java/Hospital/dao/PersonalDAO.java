@@ -33,13 +33,4 @@ public class PersonalDAO extends HospitalDAO {
         super.jdbcTemplate.update("INSERT INTO "+ TABLE_NAME +" (personalName, personalPhoneNumber, idQualification)  VALUES( ?, ?, ?)", personal.getPersonalName(), personal.getPersonalPhoneNumber(),
                 personal.getIdQualification());
     }
-
-//    public void update(int id, Personal updatedPersonal) {
-//        jdbcTemplate.update("UPDATE Person SET name=?, age=?, email=? WHERE id=?", updatedPerson.getName(),
-//                updatedPerson.getAge(), updatedPerson.getEmail(), id);
-//
-//    }
-
-
-
 }
