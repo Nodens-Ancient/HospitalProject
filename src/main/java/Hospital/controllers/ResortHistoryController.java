@@ -35,13 +35,13 @@ public class ResortHistoryController {
 
     @GetMapping("/new")
     public String newPrescription(@ModelAttribute("resorthistory") ResortHistory resortHistory) {
-        return "resorthistory/newResortHistory";
+        return "resorthistory/NewResortHistory";
     }
 
     @PostMapping()
     public String create(@ModelAttribute("resorthistory") @Valid ResortHistory resortHistory, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
-            return "resorthistory/newResortHistory";
+            return "resorthistory/NewResortHistory";
 
         resortHistoryDAO.save(resortHistory);
         return "redirect:/resorthistory";

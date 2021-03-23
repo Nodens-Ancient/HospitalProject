@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form th:method="POST" th:action="@{/manipulation}" th:object="${manipulation}">
+<form th:method="POST" th:action="@{/manipulations}" th:object="${manipulations}">
     <br/>
     <label for="manipulation">New manipulation: </label>
     <input type="text" th:field="*{manipulation}" id="manipulation"/>

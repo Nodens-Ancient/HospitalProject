@@ -35,17 +35,5 @@ public class PatientDAO extends HospitalDAO {
                 patient.getPatientName(), patient.getPatientPhoneNumber());
     }
 
-//    public void save(Patients patients) {
-//        jdbcTemplate.update("INSERT INTO Person VALUES(1, ?, ?, ?)", person.getName(), person.getAge(),
-//                person.getEmail());
-//    }
-//    public void update(int id, Patients updatedPatient) {
-//        jdbcTemplate.update("UPDATE Person SET name=?, age=?, email=? WHERE id=?", updatedPerson.getName(),
-//                updatedPerson.getAge(), updatedPerson.getEmail(), id);
-//    }
-
-//    public void delete(int id) {
-//        jdbcTemplate.update("DELETE FROM patients WHERE id=?", id);
-//    }
 
 }

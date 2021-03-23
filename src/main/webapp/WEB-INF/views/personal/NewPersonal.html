@@ -7,17 +7,12 @@
 <body>
 
 <form th:method="POST" th:action="@{/personal}" th:object="${personal}">
-<!--    <label for="id">Enter id: </label>-->
-<!--    <input type="text" th:field="*{p}" id="id"/>-->
-<!--    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{id}">Name Error</div>-->
     <br/>
     <label for="Name">Enter Name: </label>
     <input type="text" th:field="*{personalName}" id="Name"/>
-<!--    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{personalName}">Name Error</div>-->
     <br/>
     <label for="phoneNumber">Enter Phone Number: </label>
     <input type="text" th:field="*{personalPhoneNumber}" id="phoneNumber"/>
-<!--    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{personalPhoneNumber}">Phone Number Error</div>-->
     <br/>
     <label for="qualificationId">Enter Qualification ID: </label>
     <input type="text" th:field="*{idQualification}" id="qualificationId"/>

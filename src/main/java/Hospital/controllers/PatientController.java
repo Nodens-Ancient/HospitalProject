@@ -47,4 +47,9 @@ public class PatientController {
         patientDAO.save(patient);
         return "redirect:/patients";
     }
+
+    @PostMapping("/register")
+    public String registerNewPatient(){
+        return "patients/NewPatient";
+    }
 }

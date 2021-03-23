@@ -5,19 +5,6 @@
     <title>Show</title>
 </head>
 <body>
-<!--/*@thymesVar id="personal" type="Hospital.models.tablemodels.Personal"*/-->
-<!--<p th:text="${personal.getId() + ' ' + personal.getPersonalName() + ', ' + personal.getPersonalPhoneNumber()}">VALUE</p>-->
-<!--<p th:text="${'Email: ' + personal.getIdQualification()}">VALUE</p>-->
-<!--<p th:text="${personal.getId()}">VALUE</p>-->
-<!--<a th:href="@{/people/{id}/edit(id=${personal.getId()})}">Edit</a>-->
-
-<!--/*@thymesVar id="personal" type="Hospital.models.tablemodels.Personal"*/-->
-<!--<table>-->
-<!--    <tr th:each="pat : ${patients}">-->
-<!--        <td th:text="${pat.toString()}"></td>-->
-<!--    </tr>-->
-<!--</table>-->
-
 
 <form th:method="DELETE" th:action="@{/people/{id}(id=${personal.getId()})}">
     <input type="submit" value="Delete"/>

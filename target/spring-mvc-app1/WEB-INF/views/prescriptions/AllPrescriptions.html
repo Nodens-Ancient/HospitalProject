@@ -7,7 +7,6 @@
 <body>
 
 <table>
-    <!--/*@thymesVar id="patients" type="java.util.List<Hospital.models.tablemodels.Patient>"*/-->
     <tr th:each="pres : ${prescriptions}">
         <td th:text="${pres.toString()}"></td>
     </tr>
