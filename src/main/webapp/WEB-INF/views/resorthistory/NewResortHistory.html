@@ -10,7 +10,7 @@
 <form th:method="POST" th:action="@{/resorthistory}" th:object="${resorthistory}">
     <br/>
     <label for="patientId">Patient id: </label>
-    <input type="text" th:field="*{idPatient}" id="patientId"/>
+    <input type="number" th:field="*{idPatient}" id="patientId"/>
     <br/>
     <label for="dateResort">Enter Date Resort : </label>
     <input type="text" th:field="*{dateResort}" id="dateResort"/>

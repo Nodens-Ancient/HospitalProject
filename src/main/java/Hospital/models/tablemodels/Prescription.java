@@ -1,10 +1,18 @@
 package Hospital.models.tablemodels;
 
+import javax.validation.constraints.NotNull;
+
 public class Prescription {
+    @NotNull
     private int id;
+    @NotNull
+    @NotNull
     private int idManipulation;
+    @NotNull
     private int idPersonalRef;
+    @NotNull
     private int idPersonalExec;
+    @NotNull
     private int idDiagnose;
 
     public int getIdDiagnose() {

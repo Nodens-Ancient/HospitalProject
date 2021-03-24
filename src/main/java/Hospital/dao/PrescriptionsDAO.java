@@ -28,7 +28,8 @@ public class PrescriptionsDAO extends HospitalDAO{
     }
 
     public void save(Prescription prescription) {
-        super.jdbcTemplate.update("INSERT INTO "+ TABLE_NAME +" (idQualifications)  VALUES( ?,?,?,?,?)",
+        super.jdbcTemplate.update("INSERT INTO "+ TABLE_NAME +" (idManipulation, idPersonalRef," +
+                        "idDiagnose, idPersonalExec, idResort)  VALUES( ?,?,?,?,?)",
                 prescription.getIdManipulation(), prescription.getIdPersonalRef(),
                 prescription.getIdDiagnose(), prescription.getIdPersonalExec(), prescription.getIdResort());
     }

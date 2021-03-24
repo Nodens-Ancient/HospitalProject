@@ -30,7 +30,7 @@ public class DiagnosesDAO extends HospitalDAO{
     }
 
     public void save(Diagnose diagnose) {
-        super.jdbcTemplate.update("INSERT INTO "+ TABLE_NAME +" (idResot, symptoms, diagnoseInitial, diagnoseFinal, diagnoseCurrent)  VALUES( ?, ?, ?,?,?)",
+        super.jdbcTemplate.update("INSERT INTO "+ TABLE_NAME +" (idResort, symptoms, diagnoseInitial, diagnoseFinal, diagnoseCurrent)  VALUES( ?, ?, ?,?,?)",
                 diagnose.getIdResort(), diagnose.getSymptoms(), diagnose.getDiagnoseInitial(), diagnose.getDiagnoseFinal(), diagnose.getDiagnoseCurrent());
     }
 

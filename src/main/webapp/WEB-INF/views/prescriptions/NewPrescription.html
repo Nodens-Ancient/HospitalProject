@@ -10,19 +10,19 @@
 <form th:method="POST" th:action="@{/prescriptions}" th:object="${prescription}">
     <br/>
     <label for="idManipulation">Manipulation id: </label>
-    <input type="text" th:field="*{idManipulation}" id="idManipulation"/>
+    <input type="number" th:field="*{idManipulation}" id="idManipulation"/>
     <br/>
-    <label for="ref">Personal prescribed: </label>
-    <input type="text" th:field="*{idPersonalRef}" id="ref"/>
+    <label for="ref">Personal prescribed ID: </label>
+    <input type="number" th:field="*{idPersonalRef}" id="ref"/>
     <br/>
-    <label for="idDiagnose">Enter Phone Number: </label>
-    <input type="text" th:field="*{idDiagnose}" id="idDiagnose"/>
+    <label for="idDiagnose">Diagnose ID: </label>
+    <input type="number" th:field="*{idDiagnose}" id="idDiagnose"/>
     <br/>
-    <label for="idExec">Enter Phone Number: </label>
-    <input type="text" th:field="*{idPersonalExec}" id="idExec"/>
+    <label for="idExec">Personal Processor ID: </label>
+    <input type="number" th:field="*{idPersonalExec}" id="idExec"/>
     <br/>
-    <label for="idRes">Enter Phone Number: </label>
-    <input type="text" th:field="*{idResort}" id="idRes"/>
+    <label for="idRes">Resort ID: </label>
+    <input type="number" th:field="*{idResort}" id="idRes"/>
     <br/>
     <input type="submit" value="Create!"/>
 </form>

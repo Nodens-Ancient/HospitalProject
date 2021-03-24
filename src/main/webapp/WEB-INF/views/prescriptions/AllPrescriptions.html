@@ -7,14 +7,34 @@
 </head>
 <body>
 
-<table>
+<table border="1" width="100%" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Diagnose ID</th>
+        <th>Manipulation ID</th>
+        <th>Personal Referer ID</th>
+        <th>Personal Processor ID</th>
+        <th>Resort ID</th>
+    </tr>
     <tr th:each="pres : ${prescriptions}">
-        <td th:text="${pres.toString()}"></td>
+        <td th:text="${pres.id}">text</td>
+        <td th:text="${pres.idDiagnose}">text</td>
+        <td th:text="${pres.idManipulation}">text</td>
+        <td th:text="${pres.idPersonalRef}">text</td>
+        <td th:text="${pres.idPersonalExec}">text</td>
+        <td th:text="${pres.idResort}">text</td>
     </tr>
 </table>
 <table>
     <tr>
-        <a href="/spring_jdbc_template_war/prescriptions/new">Add new prescription</a>
+        <td>
+            <a href="/spring_jdbc_template_war/prescriptions/new">Add new prescription</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/spring_jdbc_template_war/patients">Return to patients</a>
+        </td>
     </tr>
 </table>
 </body>

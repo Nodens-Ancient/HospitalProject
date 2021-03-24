@@ -10,7 +10,7 @@
 <form th:method="POST" th:action="@{/availablemanipulations}" th:object="${avmanipulation}">
     <br/>
     <label for="idQual">Qualification id: </label>
-    <input type="text" th:field="*{idQualification}" id="idQual"/>
+    <input type="number" th:field="*{idQualification}" id="idQual"/>
     <br/>
     <input type="submit" value="Create!"/>
 </form>
