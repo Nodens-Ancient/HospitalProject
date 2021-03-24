@@ -13,7 +13,7 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/availablemanipulations")
 public class AvailableManipulationsController {
-    private static final String ALL_INFO = "availablemanipulations/allAvailableManipulations";
+    private static final String ALL_INFO = "availablemanipulations/AllAvailableManipulations";
     private static final String SHOW = "availablemanipulations/show";
     private final AvailableManipulationsDAO availableManipulationsDAO;
 

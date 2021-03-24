@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Qualifications</title>
+    <h2 style="text-align: center">Qualifications</h2>
 </head>
 <body>
 
@@ -10,8 +11,11 @@
     <tr th:each="qual : ${qualifications}">
         <td th:text="${qual.toString()}">user</td>
     </tr>
+</table>
+
+<table>
     <tr>
-        <a href="/spring_jdbc_template_war/qualification/new">Create new qualification</a>
+        <a href="/spring_jdbc_template_war/qualification/new">Add new qualification</a>
     </tr>
 </table>
 

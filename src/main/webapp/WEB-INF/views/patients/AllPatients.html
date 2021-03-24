@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Patients</title>
+    <h2 style="text-align: center">Patients</h2>
 </head>
 <body>
 
 <table border="1" width="100%" cellpadding="5">
-    <!--/*@thymesVar id="patient" type="java.util.List<Hospital.models.tablemodels.Patient>"*/-->
     <tr>
         <th>Patient ID</th>
         <th>PatientName</th>
@@ -23,8 +23,20 @@
         </td>
         <td th:text="${pat.patientPhoneNumber}">text</td>
     </tr>
+</table>
+
+<table>
     <tr>
-        <a href="/spring_jdbc_template_war/patients/new">Add new patient</a>
+        <td>
+            <a href="/spring_jdbc_template_war/patients/new">Add new patient</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/spring_jdbc_template_war/resorthistory/new">
+                Add new resort history
+            </a>
+        </td>
     </tr>
 </table>
 

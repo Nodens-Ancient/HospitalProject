@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Diagnoses</title>
+    <h2 style="text-align: center">Diagnoses</h2>
 </head>
 <body>
 
@@ -23,8 +24,11 @@
         <td th:text="${diag.diagnoseFinal}">text</td>
         <td th:text="${diag.diagnoseCurrent}">text</td>
     </tr>
+</table>
+
+<table>
     <tr>
-        <a href="/spring_jdbc_template_war/diagnoses/new">Create new diagnose</a>
+        <a href="/spring_jdbc_template_war/diagnoses/new">Add new diagnose</a>
     </tr>
 </table>
 

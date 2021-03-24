@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Prescriptions</title>
+    <h2 style="text-align: center">Prescriptions</h2>
 </head>
 <body>
 
@@ -10,10 +11,11 @@
     <tr th:each="pres : ${prescriptions}">
         <td th:text="${pres.toString()}"></td>
     </tr>
+</table>
+<table>
     <tr>
-        <a href="/spring_jdbc_template_war/prescriptions/new">Create new prescription</a>
+        <a href="/spring_jdbc_template_war/prescriptions/new">Add new prescription</a>
     </tr>
 </table>
-
 </body>
 </html>

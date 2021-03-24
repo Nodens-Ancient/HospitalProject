@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Medical History</title>
+    <h2 style="text-align: center">Medical History</h2>
 </head>
 <body>
 
@@ -27,6 +28,11 @@
         <td th:text="${med.manipulation}">text</td>
         <td th:text="${med.dateResort}">text</td>
         <td th:text="${med.dateDischarge}">text</td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <a href="/spring_jdbc_template_war/resorthistory/new">Add medical history</a>
     </tr>
 </table>
 
